@@ -27,9 +27,9 @@ python call_image.py
 * 창이 열리면 임의의 키보드 버튼을 눌러 프로그램을 종료할 수 있습니다.
 
 ##  실행 결과 화면
-![실행결과](./call_image/call_image.png)
-![실행결과2](./call_image/call_image2.png)
-![실행결과3](./call_image/call_image3.png)
+![실행결과](./call_image.png)
+![실행결과2](./call_image2.png)
+![실행결과3](./call_image3.png)
 *원본 이미지(좌)와 흑백 변환 이미지(우)를 가로로 병합하여 출력한 모습*
 
 ## 전체 코드

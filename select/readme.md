@@ -45,10 +45,10 @@ elif key == ord('s'):
 * `q` : 프로그램 종료
 
 ## 실행 결과 화면
-![실행결과1](./select/select1.png)
+![실행결과1](./select1.png)
 
 
-![실행결과2](./select/select2.png)
+![실행결과2](./select2.png)
 
 ## 전체 코드
 ```python

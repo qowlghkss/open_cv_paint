@@ -33,9 +33,9 @@ elif key == ord('+') or key == ord('='):
 * `q` : 프로그램 종료
 
 ##  실행 결과 화면
-![실행결과1](./draw/draw1.png)
+![실행결과1](./draw1.png)
 
-![실행결과2](./draw/draw2.png)
+![실행결과2](./draw2.png)
 
 ## 전체 코드
 ```python
