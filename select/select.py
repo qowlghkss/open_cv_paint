@@ -61,7 +61,7 @@ image_path = '/home/ji/Desktop/homework/1week/girl_laughing.jpg'
 img_original = cv.imread(image_path)
 
 if img_original is None:
-    print(f"🚨 이미지를 불러올 수 없습니다: {image_path}")
+    print(f" 이미지를 불러올 수 없습니다: {image_path}")
     sys.exit()
 
 # 혹시 사진이 너무 크다면 주석을 풀고 크기를 줄여주세요.
@@ -73,7 +73,7 @@ img_copy = img_original.copy()
 cv.namedWindow('Image')
 cv.setMouseCallback('Image', select_roi)
 
-print("🖱️ ROI(관심영역) 선택 프로그램을 시작합니다.")
+print(" ROI(관심영역) 선택 프로그램을 시작합니다.")
 print(" - 마우스 좌클릭 + 드래그 : 초록색 박스로 영역 선택")
 print(" - [r] 키 : 영역 선택 리셋 (처음부터 다시 선택)")
 print(" - [s] 키 : 선택한 영역(ROI)을 파일로 저장")
@@ -106,8 +106,8 @@ while True:
         if roi_extracted and roi is not None:
             # 💡 cv.imwrite를 이용해 파일로 저장합니다.
             cv.imwrite('saved_roi.jpg', roi) 
-            print("💾 성공! 선택한 영역이 'saved_roi.jpg'로 저장되었습니다.")
+            print("성공! 선택한 영역이 'saved_roi.jpg'로 저장되었습니다.")
         else:
-            print("⚠️ 오류: 저장할 영역이 없습니다. 먼저 마우스로 드래그해서 영역을 선택하세요.")
+            print("오류: 저장할 영역이 없습니다. 먼저 마우스로 드래그해서 영역을 선택하세요.")
 
 cv.destroyAllWindows()
