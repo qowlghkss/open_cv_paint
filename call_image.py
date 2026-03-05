@@ -8,7 +8,7 @@ img = cv.imread('/home/ji/Desktop/homework/1week/soccer.jpg')
 if img is None:
     print("이미지를 불러올 수 없습니다. 파일 이름이나 경로를 확인해 주세요.")
 else:
-    # 🚨 [추가된 부분] 이미지 크기를 가로/세로 각각 절반(50%)으로 줄이기
+    #  [추가된 부분] 이미지 크기를 가로/세로 각각 절반(50%)으로 줄이기
    
     img = cv.resize(img, (0, 0), fx=0.5, fy=0.5)
 
@@ -16,7 +16,7 @@ else:
     gray_img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
 
-    # 🚨 [핵심 포인트] np.hstack()을 위한 차원 맞추기
+    #  [핵심 포인트] np.hstack()을 위한 차원 맞추기
     # 원본(img)은 3채널(B,G,R)이고, 변환된 gray_img는 1채널(흑백)입니다.
     # 두 이미지의 모양(shape)이 다르면 np.hstack()으로 붙일 때 에러가 발생합니다.
     # 따라서 흑백 이미지를 시각적인 변화 없이 형태만 3채널로 변환해 줍니다.
