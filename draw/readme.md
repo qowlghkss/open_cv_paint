@@ -1,3 +1,44 @@
+## 프로젝트 개요
+OpenCV를 사용하여 원본 이미지를 도화지 삼아, 마우스 좌/우클릭 드래그를 통해 파란색과 빨간색 선을 자유롭게 그리고 키보드로 붓의 굵기를 실시간으로 조절하는 대화형(Interactive) 그림판 프로그램입니다.
+
+
+
+##  주요 코드 해석 (Key Code Analysis)
+
+### 1. 클릭과 드래그 동시 감지 (비트 연산자 활용)
+```python
+if event == cv.EVENT_LBUTTONDOWN or (event == cv.EVENT_MOUSEMOVE and (flags & cv.EVENT_FLAG_LBUTTON)):
+    cv.circle(img, (x, y), brush_size, (255, 0, 0), -1)
+```
+* **설명:** 마우스를 단순히 이동할 때(`EVENT_MOUSEMOVE`)뿐만 아니라, **좌클릭 버튼이 눌린 상태로 이동 중인지** 확인하기 위해 `flags & cv.EVENT_FLAG_LBUTTON` 비트 연산을 수행했습니다. 이를 통해 끊김 없는 부드러운 곡선을 그릴 수 있습니다. 우클릭(빨간색 붓)에도 동일한 원리가 적용되었습니다.
+
+### 2. 우클릭 컨텍스트 메뉴 방지 (`WINDOW_GUI_NORMAL`)
+```python
+cv.namedWindow('Paint', cv.WINDOW_GUI_NORMAL)
+```
+* **설명:** OpenCV의 기본 윈도우 창에서는 우클릭 시 옵션 메뉴가 팝업되어 드로잉을 방해하는 문제가 있습니다. 이를 해결하기 위해 `cv.WINDOW_GUI_NORMAL` 플래그를 사용하여 창을 생성함으로써 방해 요소 없이 온전히 그림 그리기에 집중할 수 있는 환경을 구축했습니다.
+
+### 3. 키보드를 통한 동적 상태 제어 (`brush_size`)
+```python
+elif key == ord('+') or key == ord('='):
+    if brush_size < 15:  
+        brush_size += 1
+```
+* **설명:** `while` 루프 내에서 사용자의 키보드 입력 값을 실시간으로 받아 전역 변수인 `brush_size`를 업데이트합니다. 최댓값(15)과 최솟값(1)의 리미트를 설정하여 안정성을 확보했습니다.
+
+##  조작 가이드
+* `마우스 좌클릭 + 드래그` : 파란색 붓으로 그리기
+* `마우스 우클릭 + 드래그` : 빨간색 붓으로 그리기
+* `+` / `-` : 붓 크기 키우기 / 줄이기 (1~15)
+* `q` : 프로그램 종료
+
+##  실행 결과 화면
+![실행결과1](./draw/draw1.png)
+
+![실행결과2](./draw/draw2.png)
+
+## 전체 코드
+```python
 import cv2 as cv
 import numpy as np
 import sys
@@ -64,3 +105,5 @@ while True:
             print(f"현재 붓 크기: {brush_size} (감소)")
 
 cv.destroyAllWindows()
+
+```
