@@ -26,14 +26,14 @@ img = cv.imread(image_path)
 
 # 이미지를 제대로 불러왔는지 확인 (파일이 없으면 프로그램 종료)
 if img is None:
-    print(f"🚨 '{image_path}' 이미지를 불러올 수 없습니다. 파일 이름과 위치를 확인해 주세요!")
+    print(f" '{image_path}' 이미지를 불러올 수 없습니다. 파일 이름과 위치를 확인해 주세요!")
     sys.exit()
 
 # 4. 윈도우 창 설정 (우클릭 메뉴 방지를 위해 WINDOW_GUI_NORMAL 사용)
 cv.namedWindow('Paint', cv.WINDOW_GUI_NORMAL)
 cv.setMouseCallback('Paint', draw_brush)
 
-print("🎨 이미지 위에 그림 그리기를 시작합니다.")
+print("  이미지 위에 그림 그리기를 시작합니다.")
 print(" - 좌클릭 + 드래그 : 파란색 붓")
 print(" - 우클릭 + 드래그 : 빨간색 붓")
 print(" - [+] 키 : 붓 크기 증가 (최대 15)")
