@@ -33,7 +33,7 @@ if img is None:
 cv.namedWindow('Paint', cv.WINDOW_GUI_NORMAL)
 cv.setMouseCallback('Paint', draw_brush)
 
-print(" 이미지 위에 그림 그리기를 시작합니다.")
+print("🎨 이미지 위에 그림 그리기를 시작합니다.")
 print(" - 좌클릭 + 드래그 : 파란색 붓")
 print(" - 우클릭 + 드래그 : 빨간색 붓")
 print(" - [+] 키 : 붓 크기 증가 (최대 15)")

@@ -1,9 +1,12 @@
 # open_cv_paint
-환경은 requirements.txt 를 따라 conda 환경 만들었습니다
+환경은 requirements.txt 를 따라 env를 만들었습니다
+저는 conda를 활용했습니다.
 
 과제 1은 call_image.py (사진이 너무 커 resize했습니다)
 
 과제 2는 draw.py 로 제작하였으며 
+
+과제 3은 select.py로 제작되었습니다.
 
 
 이미지 위치의 경우는 각자 지정해주셔야 합니다.
